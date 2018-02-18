@@ -24,8 +24,17 @@ public class TestServlet extends HttpServlet {
         
         JSONObject loginStatus = new JSONObject();
 		
-		if (loginStatus.has("username") && (loginStatus.has("password"))) { 
+		if (loginStatus.has("username") ) { 
         {
+            if(username.equals("ara") && password.equals("1234")) {
+                loginStatus.put("connected", true);
+            }
+        else
+        {
+            loginStatus.put("connected", false);
+        }
+        
+        if (loginStatus.has("password") ) {
             if(username.equals("ara") && password.equals("1234")) {
                 loginStatus.put("connected", true);
             }
